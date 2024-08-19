@@ -1,0 +1,24 @@
+public class MaxSubArray {
+public satic void main(String[] args) {
+int arr[]= {-2,-3,4,-1,-2,1,5};
+		int n=arr.length;
+		int maxsum=Integer.MIN_VALUE;                   //n subarray sum
+		int cursum=0;
+		int end=0,start=0;
+		for(int i=0;i<n;i++) {
+			cursum=cursum+arr[i];
+			if(cursum>maxsum) { 
+				maxsum=cursum;
+				end=i;
+			}
+			if(cursum<0) {
+				cursum=0;
+				start=i+1;
+			}
+		}
+		System.out.println(maxsum);
+		for(int i=start;i<=end;i++) {
+			System.out.print(arr[i]+" ");
+		}
+}
+}
