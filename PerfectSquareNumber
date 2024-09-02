@@ -1,0 +1,13 @@
+import java.util.Scanner;
+class PerfectSquareNumber {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        Integer num=sc.nextInt();
+        for(int i=1;i<num/2;i++) {    //For less iterations
+            if(i*i==num) {
+                System.out.println(n + " is a perfect square number");
+            }
+        }
+    }
+}
