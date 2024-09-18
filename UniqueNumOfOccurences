@@ -1,0 +1,48 @@
+
+
+import java.util.Arrays;
+
+public class UniqueNumOfOccurences {
+
+	public static void main(String[] args) {
+		
+		int[] arr= {1,2};
+		int check=0;
+		
+		int k=0;
+		int size=1;
+		int[] resArr=new int[arr.length];
+		Arrays.sort(arr);
+		for(int i=0;i<arr.length;i++) {
+			int count=1;
+			for(int j=i+1;j<arr.length;j++) {
+				if(arr[i]==arr[j]) {
+					count++;
+					i++;
+				}
+			}
+			resArr[k]=count;
+			k++;
+		}
+		for(int e=0;e<resArr.length;e++) {
+			if(resArr[e]!=0) {
+				System.out.println(resArr[e]);
+				size++;
+			}
+		}
+		Arrays.sort(resArr);
+		for(int n=0;n<resArr.length-1;n++) {
+			if(resArr[n]==resArr[n+1]-1) {
+				check++;
+			}
+		}
+		System.out.println(check);
+		if(check==size-1) {
+			System.out.println("True");
+		}
+		else {
+			System.out.println("False");
+		}
+	}
+
+}
